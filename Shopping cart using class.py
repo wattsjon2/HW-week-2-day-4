@@ -12,8 +12,8 @@ class Cart():
             add_again = input('This is already in the cart, would you like to change the quantity? yes/no ')
             if add_again.lower() == "yes":
                 new_item_quant = input('How many would you like instead? ')
-                if new_item_quant.isdigit() == False:
-                    print("please enter a number")
+                if new_item_quant.isdigit() == False or new_item_quant == "0":
+                    print("please enter a valid quantity")
                 else:
                     cur_quant = self.cart_list.get(new_item)
                     self.cart_list[new_item] = new_item_quant
@@ -22,8 +22,8 @@ class Cart():
         else:        
             new_item_quant = input('How many would you like to add? ')
             new_item.lower()
-            if new_item_quant.isdigit() == False:
-                print("please enter a number")
+            if new_item_quant.isdigit() == False or new_item_quant == "0":
+                print("please enter a valid quantity")
             else:
                 self.cart_list[new_item] = new_item_quant
                 if new_item_quant == 1:
@@ -63,8 +63,8 @@ class Cart():
                         print(f"{del_item} has been removed from the cart")
                     else:
                         del_update = input(f"How many {del_item} would you like in the cart instead? ")
-                        if del_update.isdigit() == False:
-                            print("please enter a number")
+                        if del_update.isdigit() == False or del_update == "0":
+                            print("please enter a valid quantity")
                         else:
                             self.cart_list[del_item] = del_update
                             print(f"The quantity of {del_item} has been changed from {del_quant} to {del_update}")
