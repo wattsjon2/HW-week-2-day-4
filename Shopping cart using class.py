@@ -26,7 +26,7 @@ class Cart():
                 print("please enter a valid quantity")
             else:
                 self.cart_list[new_item] = new_item_quant
-                if new_item_quant == 1:
+                if new_item_quant == "1":
                     print(f"{new_item_quant} {new_item} has been added to the cart")
                 else:
                     print(f"{new_item_quant} {new_item}s has been added to the cart")
